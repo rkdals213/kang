@@ -1,7 +1,9 @@
 package algo_basic.day06;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Stack;
+import java.util.StringTokenizer;
 
 public class JA_1809_탑 {
 	
@@ -20,18 +22,21 @@ public class JA_1809_탑 {
 		}
 	}
 	
-	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
-		Stack<Point> stack = new Stack<>();
+	public static void main(String[] args) throws Exception {
+		BufferedReader s = new BufferedReader(new InputStreamReader(System.in));
 		
-		int N = s.nextInt();
-		int [] result = new int [N];
-		int top = s.nextInt();
+		Stack<Point> stack = new Stack<>();	
+
+		int N = Integer.parseInt(s.readLine());
+		int [] result = new int [N];		
+		StringTokenizer a = new StringTokenizer(s.readLine());
+		
+		int top = Integer.parseInt(a.nextToken());
 		stack.push(new Point(0, top));
 		int i=1;
 		
 		while(i < N) {
-			top = s.nextInt();
+			top = Integer.parseInt(a.nextToken());
 			while(!stack.isEmpty() && i < N) {
 				Point topv = stack.peek();
 				if(topv.v < top) {
