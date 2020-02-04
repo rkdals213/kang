@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class Test5 {
 	static int [][] map = new int [19][19];
-	static int [][] dir = {{1,1},{1,0},{0,1},{1,-1}};
+	static int [][] dir = {{1,1},{1,0},{0,1},{-1,1}};
 	public static void main(String[] args) throws FileNotFoundException {
-		System.setIn(new FileInputStream("Test5.txt"));
+		//System.setIn(new FileInputStream("Test5.txt"));
 		Scanner sc = new Scanner(System.in);
 		// 구현하세요.
 		for (int i = 0; i < 19; i++) {
@@ -23,9 +23,7 @@ public class Test5 {
 			for (int j = 0; j < map.length; j++) {
 				
 				int turn = map[i][j];
-				if(turn == 1) {
-
-					
+				if(turn == 1) {				
 					for (int k = 0; k < dir.length; k++) {
 						int count = 0;
 						x=i;
@@ -36,21 +34,19 @@ public class Test5 {
 							
 							if(isIn(x,y) && map[x][y] == 1) {
 								count++;
+								
 							}else {
 								break;
-							}
-							if(count >= 4) {
-								System.out.println(1);
-								System.out.println((i+1) + " " + (j+1));
-								winner = 2;
-								return;
-							}
-						}						
-					}
-					
-				}else if(turn == 2) {
-					
-					
+							}							
+						}	
+						if(count == 4) {
+							System.out.println(1);
+							System.out.println((i+1) + " " + (j+1));
+							winner = 2;
+							return;
+						}
+					}					
+				}else if(turn == 2) {					
 					for (int k = 0; k < dir.length; k++) {
 						int count = 0;
 						x=i;
@@ -63,14 +59,14 @@ public class Test5 {
 								count++;
 							}else {
 								break;
-							}
-							if(count >= 4) {
-								System.out.println(2);
-								System.out.println((i+1) + " " + (j+1));
-								winner = 2;
-								return;
-							}
-						}						
+							}							
+						}	
+						if(count == 4) {
+							System.out.println(2);
+							System.out.println((i+1) + " " + (j+1));
+							winner = 2;
+							return;
+						}
 					}
 				}
 				else {
