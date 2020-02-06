@@ -64,9 +64,9 @@ public class BAEK_1260_S1_DFS와BFS {
 		M = s.nextInt();
 		int start = s.nextInt();		
 		
-		graph = new List[M+1];
+		graph = new List[N+1];
 		
-		for (int i = 0; i < M+1; i++) {
+		for (int i = 0; i < N+1; i++) {
 			graph[i] = new ArrayList<>();			
 		}
 		for (int i = 1; i < M+1; i++) {
