@@ -1,8 +1,6 @@
 package algorithm_study;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Scanner;
 import java.util.Stack;
@@ -45,8 +43,7 @@ public class SWEA_1861_D4_정사각형방 {
 								minstart = temp;
 							}
 						}
-					}
-					
+					}					
 				}
 			}
 			sb.append(minstart).append(" ").append(max).append("\n");
@@ -55,8 +52,7 @@ public class SWEA_1861_D4_정사각형방 {
 	}
 	static void DFS(int i, int j) {
 		Stack<Point> stack = new Stack<>();
-		stack.add(new Point(i,j,map[i][j]));
-		
+		stack.add(new Point(i,j,map[i][j]));		
 		visited[i][j] = true;
 		while(!stack.isEmpty()) {
 			Point temp = stack.pop();
