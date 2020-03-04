@@ -1,13 +1,14 @@
-package algo;
+package algorithm_study;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BAEK_2589_G5_º¸¹°¼¶ {
+public class BAEK_2589_G5_ë³´ë¬¼ì„¬ {
 	static int N;
 	static int M;
 	private static int[][] dirs = { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } };
@@ -39,7 +40,7 @@ public class BAEK_2589_G5_º¸¹°¼¶ {
 					visited = new boolean[N][M];
 					Queue<Point> queue = new LinkedList<>();
 					queue.add(new Point(i,j,0));
-					
+					visited[i][j] = true;
 					while(!queue.isEmpty()) {
 						Point t = queue.poll();
 						int x = t.i;
